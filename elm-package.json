@@ -1,7 +1,7 @@
 {
     "version": "1.0.2",
-    "summary": "Persistent network connections, making client/server communication faster.",
-    "repository": "http://github.com/elm-lang/websocket.git",
+    "summary": "Persistent network connections, making client/server communication faster, Tweaked version for WeChat app usage.",
+    "repository": "http://github.com/yjpark/elm-wx-app-websocket.git",
     "license": "BSD3",
     "source-directories": [
         "src"

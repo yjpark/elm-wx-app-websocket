@@ -2,6 +2,7 @@ effect module WebSocket where { command = MyCmd, subscription = MySub } exposing
   ( send
   , listen
   , keepAlive
+  , is_open, is_debug_mode, set_debug_mode
   )
 
 {-| Web sockets make it cheaper to talk to your servers.
@@ -30,7 +31,7 @@ import Task exposing (Task)
 import Time exposing (Time)
 import WebSocket.LowLevel as WS
 
-
+import Native.WebSocket
 
 -- COMMANDS
 
@@ -345,3 +346,16 @@ closeConnection connection =
 
     Connected socket ->
       WS.close socket
+
+
+is_open : () -> Bool
+is_open = Native.WebSocket.is_open
+
+
+is_debug_mode : () -> Bool
+is_debug_mode = Native.WebSocket.is_debug_mode
+
+
+set_debug_mode : Bool -> ()
+set_debug_mode value =
+    Native.WebSocket.set_debug_mode value
